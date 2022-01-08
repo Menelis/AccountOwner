@@ -40,3 +40,7 @@
  
 # API Test UI Review
 ![This is an image](https://github.com/Menelis/AccountOwner/blob/master/Resources/swagger.png)
+
+# How to run application
+- Clone repository and build the solution
+- Run application - it will load with this url http://localhost:5000/ then append it with swagger in ordert to see the above API preview. The url should look like this http://localhost:5000/swagger/index.html.
