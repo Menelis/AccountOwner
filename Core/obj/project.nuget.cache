@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "vpNP2lDYQyNNT9LQsPuy1KgDOxWdPePs2eVZlzkikgp1MR554n1gezGZvQ4Jny6cCWj/7QLtlrVP33ZeRmkLOg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mvelase\\Desktop\\AccountOwner\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mvelase\\.nuget\\packages\\autofac\\6.3.0\\autofac.6.3.0.nupkg.sha512",
+    "C:\\Users\\Mvelase\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

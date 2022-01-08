@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Controllers.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.AccountController.#ctor(Core.Interfaces.UseCases.AccountUseCases.IAccountTransferUseCase,Api.Presenters.AccountPresenters.AccountTransferPresenter,Core.Interfaces.UseCases.AccountUseCases.ICreateAccountUseCase,Api.Presenters.AccountPresenters.CreateAccountPresenter,Core.Interfaces.UseCases.AccountUseCases.IGetAccountBalancesUseCase,Api.Presenters.AccountPresenters.GetAccountBalancesPresenter,Core.Interfaces.UseCases.AccountUseCases.IGetAccountTranferHistoryUseCase,Api.Presenters.AccountPresenters.GetAccountTransferHistoryPresenter,Core.Interfaces.UseCases.AccountUseCases.IGetAllAccountsUseCase,Api.Presenters.AccountPresenters.GetAllAccountsPresenter)">
+            <summary>
+            
+            </summary>
+            <param name="accountTransferUseCase"></param>
+            <param name="accountTransferPresenter"></param>
+            <param name="createAccountUseCase"></param>
+            <param name="createAccountPresenter"></param>
+            <param name="getAccountBalancesUseCase"></param>
+            <param name="getAccountBalancesPresenter"></param>
+            <param name="getAccountTranferHistoryUseCase"></param>
+            <param name="getAccountTransferHistoryPresenter"></param>
+            <param name="getAllAccountsUseCase"></param>
+            <param name="getAllAccountsPresenter"></param>
+        </member>
+        <member name="M:Api.Controllers.AccountController.TrasferAmount(Api.Models.Requests.AccountRequests.AccountTranferRequest)">
+            <summary>
+            Transfer amount between two accounts
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.AccountController.Post(Api.Models.Requests.AccountRequests.CreateAccountRequest)">
+            <summary>
+            Create new Account for customer
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.AccountController.GetAccountBalancesByAccountNumber(System.String)">
+            <summary>
+            Returns Account balances that matches the provided id
+            </summary>
+            <param name="accountNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.AccountController.GetTransfers(System.String)">
+            <summary>
+            Returns a list of Transfers that has occurred on the account
+            </summary>
+            <param name="accountNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.AccountController.Get">
+            <summary>
+            Returns a list of all accounts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.AccountTypeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.AccountTypeController.#ctor(Core.Interfaces.UseCases.AccountTypeUseCases.IGetAllAccountTypesUseCase,Api.Presenters.AccountTypePresenters.GetAccountTypesPresenter)">
+            <summary>
+            
+            </summary>
+            <param name="getAllAccountTypesUseCase"></param>
+            <param name="getAccountTypesPresenter"></param>
+        </member>
+        <member name="M:Api.Controllers.AccountTypeController.Get">
+            <summary>
+            Returns a list of Account Types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.CustomerController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.CustomerController.#ctor(Core.Interfaces.UseCases.CustomerUseCases.IGetAllCustomersUseCase,Api.Presenters.CustomerPresenters.GetAllCustomersPresenter)">
+            <summary>
+            
+            </summary>
+            <param name="getAllCustomersUseCase"></param>
+            <param name="getAllCustomersPresenter"></param>
+        </member>
+        <member name="M:Api.Controllers.CustomerController.Get">
+            <summary>
+            Returns a list of customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.TransactionTypeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.TransactionTypeController.#ctor(Core.Interfaces.UseCases.TransactionTypeUseCases.IGetAllTransactionTypesUseCase,Api.Presenters.TransactionTypePresenters.GetAllTransactionTypesPresenter)">
+            <summary>
+            
+            </summary>
+            <param name="getAllTransactionTypesUseCase"></param>
+            <param name="getAllTransactionTypesPresenter"></param>
+        </member>
+        <member name="M:Api.Controllers.TransactionTypeController.Get">
+            <summary>
+            Returns a list of Transaction Types
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.WeatherForecastController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{Api.Controllers.WeatherForecastController})">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Extensions.ServiceExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Extensions.ServiceExtensions.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            configure CORS
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Api.Models.Requests.AccountRequests.AccountTranferRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.AccountTranferRequest.SourceAccountNumber">
+            <summary>
+            Account Number where the amount will be transfered from
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.AccountTranferRequest.DestinationAccountNumber">
+            <summary>
+            Account Number where amount will be sent to
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.AccountTranferRequest.Amount">
+            <summary>
+            Amount that will be transfered
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Api.Models.Requests.AccountRequests.CreateAccountRequest">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.CreateAccountRequest.AccountTypeId">
+            <summary>
+            Account Type Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.CreateAccountRequest.CustomerId">
+            <summary>
+            Customer Id
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.Models.Requests.AccountRequests.CreateAccountRequest.DepositAmount">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:Api.Models.Validation.AccountValidations.AccountTransferRequestValidation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Models.Validation.AccountValidations.AccountTransferRequestValidation.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.Models.Validation.AccountValidations.CreateAccountRequestValidation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Models.Validation.AccountValidations.CreateAccountRequestValidation.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.Presenters.AccountPresenters.AccountTransferPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountPresenters.AccountTransferPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.AccountTransferPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.AccountTransferPresenter.Handle(Core.Dto.UseCaseResponses.AccountResponses.AccountTransferResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.AccountPresenters.CreateAccountPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountPresenters.CreateAccountPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.CreateAccountPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.CreateAccountPresenter.Handle(Core.Dto.UseCaseResponses.AccountResponses.CreateAccountResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.AccountPresenters.GetAccountBalancesPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountPresenters.GetAccountBalancesPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAccountBalancesPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAccountBalancesPresenter.Handle(Core.Dto.UseCaseResponses.AccountResponses.GetAccountBalancesResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.AccountPresenters.GetAccountTransferHistoryPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountPresenters.GetAccountTransferHistoryPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAccountTransferHistoryPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAccountTransferHistoryPresenter.Handle(Core.Dto.UseCaseResponses.AccountResponses.GetAccountTransferHistoryResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.AccountPresenters.GetAllAccountsPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountPresenters.GetAllAccountsPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAllAccountsPresenter.#ctor">
+            <summary>
+            ////
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountPresenters.GetAllAccountsPresenter.Handle(Core.Dto.UseCaseResponses.AccountResponses.GetAllAccountsResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.AccountTypePresenters.GetAccountTypesPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.AccountTypePresenters.GetAccountTypesPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.AccountTypePresenters.GetAccountTypesPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.AccountTypePresenters.GetAccountTypesPresenter.Handle(Core.Dto.UseCaseResponses.AccountTypeResponses.GetAllAccountTypesResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.CustomerPresenters.GetAllCustomersPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.CustomerPresenters.GetAllCustomersPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.CustomerPresenters.GetAllCustomersPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.CustomerPresenters.GetAllCustomersPresenter.Handle(Core.Dto.UseCaseResponses.CustomerResponses.GetAllCustomersResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Presenters.JsonContentResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.JsonContentResult.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.Presenters.TransactionTypePresenters.GetAllTransactionTypesPresenter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.Presenters.TransactionTypePresenters.GetAllTransactionTypesPresenter.ContentResult">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Presenters.TransactionTypePresenters.GetAllTransactionTypesPresenter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Presenters.TransactionTypePresenters.GetAllTransactionTypesPresenter.Handle(Core.Dto.UseCaseResponses.TransactionTypeResponses.GetAllTransactionTypesResponse)">
+            <summary>
+            
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="T:Api.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Serialization.JsonSerializer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Serialization.JsonSerializer.SerializeObject(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Serialization.JsonSerializer.JsonContractResolver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Api.Startup.Configuration">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Api.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            Register Use Cases and Presenters using autofac
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:Api.WeatherForecast">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Api.WeatherForecast.Date">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.WeatherForecast.TemperatureC">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Api.WeatherForecast.TemperatureF">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Api.WeatherForecast.Summary">
+            <summary>
+            
+            </summary>
+            <value></value>
+        </member>
+    </members>
+</doc>
